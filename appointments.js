@@ -4,6 +4,7 @@ let appointments = [
         "id": 1,
         "name": "Juan Pérez",
         "email": "juanperez@example.com",
+        "casa": "11",
         "date": "2023-06-07",
         "time": "10:00 AM"
     },
@@ -11,6 +12,7 @@ let appointments = [
         "id": 2,
         "name": "María López",
         "email": "marialopez@example.com",
+        "casa": "10",
         "date": "2023-06-08",
         "time": "2:30 PM"
     }
@@ -30,6 +32,7 @@ function displayAppointments() {
         // Construir el contenido HTML para la tarjeta de cita
         let html = '<h3>' + appointment.name + '</h3>';
         html += '<p>Correo Electrónico: ' + appointment.email + '</p>';
+        html += '<p>Casa: ' + appointment.casa + '</p>';
         html += '<p>Fecha: ' + appointment.date + '</p>';
         html += '<p>Hora: ' + appointment.time + '</p>';
 
@@ -48,6 +51,7 @@ document.getElementById('appointmentForm').addEventListener('submit', function (
     // Obtener los valores del formulario
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
+    let casa = document.getElementById('casa').value;
     let date = document.getElementById('date').value;
     let time = document.getElementById('time').value;
 
@@ -56,6 +60,7 @@ document.getElementById('appointmentForm').addEventListener('submit', function (
         "id": appointments.length + 1,
         "name": name,
         "email": email,
+        "casa": casa,
         "date": date,
         "time": time
     };
